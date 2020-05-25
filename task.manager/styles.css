@@ -57,6 +57,7 @@ a:hover {
 }
 
 .main-menu li {
+    display: inline-block;
     list-style: none;
     float: left;
     background: url(img/top-menu-bg.gif) bottom repeat-x #efefef;
@@ -70,7 +71,8 @@ a:hover {
 
 .main-menu.bottom li {
     float: none;
-    display: block;
+    display: inline-block;
+    margin: 0;
 }
 
 .main-menu li a {
@@ -192,4 +194,9 @@ a:hover {
 
 .iat label {
 	display: block;
+}
+
+.display-none {
+    display: none;
+    color: red;
 }
