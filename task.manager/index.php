@@ -1,31 +1,30 @@
-<pre>
-    <?php
-    error_reporting(E_ALL);
 
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/include/success.php");
+<?php
+error_reporting(E_ALL);
 
-    if (!empty($_POST)) {
-        $login = $_POST["login"];
-        $password = $_POST["password"];
+
+if (!empty($_POST)) {
+    $login = $_POST["login"];
+    $password = $_POST["password"];
+}
+
+$logins = ['admin', 'user'];
+$passwords = ['a', 'u'];
+
+$isAuth = false;
+$error = false;
+
+if (isset($_POST["btnSend"])) {
+    $index = array_search($login, $logins);
+
+    if ($index !== false && $password == $passwords[$index]) {
+        $isAuth = true;
+    } else {
+        $isAuth = false;
+        $error = true;
     }
-
-    $logins = ['admin', 'user'];
-    $passwords = ['a', 'u'];
-
-    $isAuth = false;
-
-    if (isset($_POST["btnSend"])) {
-        $index = array_search($login, $logins);
-
-        if ($index !== false && $password == $passwords[$index]) {
-            $isAuth = true;
-        } else {
-            $isAuth = false;
-            $repeat = true;
-        }
-    }
-    ?>
-</pre>
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -76,10 +75,16 @@
             </div>
 
             <div class="index-auth">
-                <div class="index-auth-ok <?= $isAuth ? "" : "display-none" ?>"><?= $massage ?>
-                </div>
 
-                <div class="index-auth-error <?= $repeat ? "" : "display-none" ?>">Неверный email или пароль</div>
+                <div>
+                    <? if ($isAuth) {
+                        include($_SERVER["DOCUMENT_ROOT"] . "/include/success.php");
+                    } elseif ($error) {
+                        include($_SERVER["DOCUMENT_ROOT"] . "/include/error.php");
+                    } else {
+                        include($_SERVER["DOCUMENT_ROOT"] . "/include/enter.php");
+                    }?>
+                </div>
 
                 <form class=<?= $isAuth ? "display-none" : "" ?> action="index.php?login=yes" method="post">
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -87,18 +92,18 @@
                             <td class="iat">
                                 <label for="login_id">Ваш e-mail:</label>
                                 <input id="login_id" size="30" name="login"
-                                       value="<?= isset($_POST["login"]) ? $_POST["login"] : "" ?>">
+                                       value="<?= $_POST["login"] ?? "" ?>">
                             </td>
                         </tr>
                         <tr>
                             <td class="iat">
                                 <label for="password_id">Ваш пароль:</label>
                                 <input id="password_id" size="30" name="password" type="password"
-                                       value="<?= isset($_POST["password"]) ? $_POST["password"] : "" ?>">
+                                       value="">
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="btnSend" "Войти"></td>
+                            <td><input type="submit" name="btnSend" value="Войти"></td>
                         </tr>
                     </table>
                 </form>
@@ -121,7 +126,7 @@
 
 <a class="clearfix footer-link" href="/?login=yes">Войти</a>
 
-<div class="footer">&copy;&nbsp;<nobr>2018</nobr>
+<div class="footer">&copy;&nbsp;<nobr>2020</nobr>
     Project.
 </div>
 
