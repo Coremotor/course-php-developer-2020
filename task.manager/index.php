@@ -4,11 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/renderMenu.php");
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/main_menu.php");
+
 $isAuth = null;
 
 if (isset($_POST["btnSend"])) {
-    require_once ($_SERVER["DOCUMENT_ROOT"] . "/include/passwords.php");
-    require_once ($_SERVER["DOCUMENT_ROOT"] . "/include/logins.php");
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/BD/passwords.php");
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/BD/logins.php");
 
     $login = $_POST["login"];
     $password = $_POST["password"];
@@ -30,25 +33,14 @@ if (isset($_POST["btnSend"])) {
 
 <body>
 
-<div class="header">
-    <div class="logo"><img src="/img/logo.png" width="68" height="23" alt="Project"></div>
-    <div class="clearfix"></div>
-</div>
+<?php
+    include ($_SERVER["DOCUMENT_ROOT"] . "/template/header.php");
+?>
 
-<div class="clear">
-    <ul class="main-menu">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">Новости</a></li>
-        <li><a href="#">Каталог</a></li>
-    </ul>
-</div>
-
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table class="clearfix" width="100%" border="0" cellspacing="0" cellpadding="0">
 
     <td class="left-collum-index">
-        <h1>Возможности проекта —</h1>
+        <h1>Возможности проекта</h1>
 
         <p>Вести свои личные списки, например покупки в магазине, цели, задачи и многое другое. Делится списками с
             друзьями и просматривать списки друзей.</p>
@@ -113,19 +105,9 @@ if (isset($_POST["btnSend"])) {
 
 </table>
 
-<div class="footer-menu clearfix">
-    <ul class="main-menu bottom">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">Новости</a></li>
-        <li><a href="#">Каталог</a></li>
-    </ul>
-</div>
-
-<div class="footer">&copy;&nbsp;<nobr>2020</nobr>
-    Project.
-</div>
+<?php
+    include ($_SERVER["DOCUMENT_ROOT"] . "/template/footer.php");
+?>
 
 </body>
 </html>
