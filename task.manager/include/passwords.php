@@ -1,0 +1,2 @@
+<?php
+$passwords = ['a', 'u'];

@@ -7,7 +7,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     margin: 0 auto;
-    width: 800px;
 }
 
 div {
@@ -58,7 +57,7 @@ a:hover {
 }
 
 .main-menu li {
-    display: inline-block;
+    /*display: inline-block;*/
     list-style: none;
     float: left;
     background: url(img/top-menu-bg.gif) bottom repeat-x #efefef;
@@ -71,8 +70,8 @@ a:hover {
 }
 
 .main-menu.bottom li {
-    float: none;
     display: inline-block;
+    float: none;
     margin: 0;
 }
 
