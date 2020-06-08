@@ -1,7 +1,7 @@
 <div class="footer-menu clearfix">
     <ul class="main-menu bottom">
         <?php
-            renderMenu\render($mainMenu);
+            renderMenu\render($mainMenu, '12px');
         ?>
     </ul>
 </div>
