@@ -7,9 +7,6 @@ error_reporting(E_ALL);
 
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/main_menu.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/functions/renderMenu.php");
-require_once($_SERVER["DOCUMENT_ROOT"] . "/functions/trimStr.php");
-
-var_dump(strlen($mainMenu[4]["title"]));
 
 $isAuth = null;
 

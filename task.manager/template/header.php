@@ -6,7 +6,7 @@
 <div class="clearfix">
     <ul class="main-menu">
         <?php
-            renderMenu\render($mainMenu, '16px');
+            renderMenu($mainMenu, '16px');
         ?>
     </ul>
 </div>

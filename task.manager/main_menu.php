@@ -3,27 +3,27 @@
 $mainMenu = [
     [
         "title" => "HTML",
-        "path" => "/route/html",
+        "path" => "/route/html/",
         "sort" => ""
     ],
     [
         "title" => "CSS",
-        "path" => "/route/css",
+        "path" => "/route/css/",
         "sort" => ""
     ],
     [
         "title" => "JavaScript",
-        "path" => "/route/js",
+        "path" => "/route/js/",
         "sort" => ""
     ],
     [
         "title" => "PHP",
-        "path" => "/route/php",
+        "path" => "/route/php/",
         "sort" => ""
     ],
     [
         "title" => "Full Stack Web Developer",
-        "path" => "/route/full_stack",
+        "path" => "/route/full_stack/",
         "sort" => ""
     ],
 ];
