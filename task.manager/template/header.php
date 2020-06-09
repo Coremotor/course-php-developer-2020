@@ -6,7 +6,8 @@
 <div class="clearfix">
     <ul class="main-menu">
         <?php
-            renderMenu($mainMenu, '16px');
+            $arr = arraySort($mainMenu, 'asc');
+            renderMenu( $arr, '16px');
         ?>
     </ul>
 </div>

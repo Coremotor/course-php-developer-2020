@@ -2,28 +2,29 @@
 
 $mainMenu = [
     [
-        "title" => "HTML",
+        "title" => "HTML5",
         "path" => "/route/html/",
-        "sort" => ""
+        "sort" => "3"
     ],
     [
-        "title" => "CSS",
+        "title" => "CSS3",
         "path" => "/route/css/",
-        "sort" => ""
+        "sort" => "2"
     ],
     [
         "title" => "JavaScript",
         "path" => "/route/js/",
-        "sort" => ""
+        "sort" => "4"
     ],
     [
         "title" => "PHP",
         "path" => "/route/php/",
-        "sort" => ""
+        "sort" => "1"
     ],
     [
         "title" => "Full Stack Web Developer",
         "path" => "/route/full_stack/",
-        "sort" => ""
+        "sort" => "5"
     ],
 ];
+
