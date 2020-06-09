@@ -1,9 +1,11 @@
 <div class="footer-menu clearfix">
     <ul class="main-menu bottom">
+
         <?php
-        $arr = arraySort($mainMenu, 'desc');
-        renderMenu( $arr, '12px');
+
+            renderMenu($mainMenu, 'fz12', 'desc', "main-menu bottom");
         ?>
+
     </ul>
 </div>
 

@@ -4,15 +4,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once ($_SERVER["DOCUMENT_ROOT"] . "/main_menu.php");
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/functions/sortMenu.php");
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/functions/renderMenu.php");
 
 $isAuth = null;
 
 if (isset($_POST["btnSend"])) {
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/BD/passwords.php");
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/BD/logins.php");
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/passwords.php");
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/logins.php");
 
     $login = $_POST["login"];
     $password = $_POST["password"];
@@ -23,16 +23,6 @@ if (isset($_POST["btnSend"])) {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="/styles.css" rel="stylesheet">
-    <title>Project - ведение списков</title>
-</head>
-
-<body>
 
 <?php
     include ($_SERVER["DOCUMENT_ROOT"] . "/template/header.php");

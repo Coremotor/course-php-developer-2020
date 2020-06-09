@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body {
+.body {
     background: #333333;
     padding: 20px;
     color: #000000;
@@ -223,3 +223,16 @@ a:hover {
     display: none;
     color: red;
 }
+
+.main-title {
+    color: white;
+}
+
+.fz12 {
+    font-size: 12px;
+}
+
+.fz16 {
+    font-size: 16px;
+}
+
