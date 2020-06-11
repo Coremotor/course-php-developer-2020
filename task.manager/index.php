@@ -1,11 +1,11 @@
 
 <?php
-phpinfo();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once ($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/lib.php");
 
 $isAuth = null;
@@ -31,7 +31,7 @@ if (isset($_POST["btnSend"])) {
 <table class="clearfix" width="100%" border="0" cellspacing="0" cellpadding="0">
 
     <td class="left-collum-index">
-        <h1>Возможности проекта</h1>
+        <h1><?=showTitle($mainMenu);?></h1>
 
         <p>Вести свои личные списки, например покупки в магазине, цели, задачи и многое другое. Делится списками с
             друзьями и просматривать списки друзей.</p>
