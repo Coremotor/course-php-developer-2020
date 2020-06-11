@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"] . "/functions/currentURL.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/currentURL.php");
 
 function showTitle($mainMenu)
 {

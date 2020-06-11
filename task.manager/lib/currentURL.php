@@ -1,6 +1,17 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"] . "/functions/titleSubStrReplace.php");
+function isCurrentUrl($url){
+
+    return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) == $url;
+
+}
+
+
+
+
+
+
+require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/titleSubStrReplace.php");
 
 
 

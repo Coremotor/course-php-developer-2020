@@ -1,12 +1,12 @@
 
 <?php
+phpinfo();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
-require_once ($_SERVER["DOCUMENT_ROOT"] . "/functions/sortMenu.php");
-require_once ($_SERVER["DOCUMENT_ROOT"] . "/functions/renderMenu.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/lib.php");
 
 $isAuth = null;
 

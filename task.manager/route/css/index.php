@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/functions/showTitle.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/showTitle.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
 ?>
 

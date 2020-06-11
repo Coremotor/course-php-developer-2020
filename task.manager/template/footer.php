@@ -2,7 +2,6 @@
     <ul class="main-menu bottom">
 
         <?php
-
             renderMenu($mainMenu, 'fz12', 'desc', "main-menu bottom");
         ?>
 
