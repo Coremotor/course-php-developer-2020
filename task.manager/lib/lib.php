@@ -9,15 +9,13 @@ function isCurrentUrl($url){
 function titleSubStrReplace($str, $length)
 {
     if (mb_strlen($str) >= $length) {
-        $title = mb_strimwidth($str, 0, $length, "...");
-    } else {
-        $title = $str;
+        $str = mb_strimwidth($str, 0, $length, "...");
     }
-    return $title;
+    return $str;
 }
 
 //Ф-ия для вывода пунктов меню
-function renderMenu($arr, $fontSize, $sort, $listClassName)
+function renderMenu($arr, $sort, $listClassName, $activeClass)
 {
     $newArr = arraySort($arr, $sort);
 
@@ -31,6 +29,7 @@ function showTitle($mainMenu)
     foreach ($mainMenu as $menuItem) {
         if (isCurrentUrl($menuItem["path"])) {
             $title = $menuItem["title"];
+            break;
         }
     }
     return $title;

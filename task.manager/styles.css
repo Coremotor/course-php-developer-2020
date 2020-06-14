@@ -56,13 +56,13 @@ a:hover {
 }
 
 .main-menu {
+    font-size: 16px;
     margin: 0;
     padding: 0;
     clear: both;
 }
 
 .main-menu li {
-    /*display: inline-block;*/
     list-style: none;
     float: left;
     background: url(img/top-menu-bg.gif) bottom repeat-x #efefef;
@@ -71,6 +71,7 @@ a:hover {
 }
 
 .main-menu.bottom {
+    font-size: 12px;
     float: left;
 }
 
@@ -234,5 +235,9 @@ a:hover {
 
 .fz16 {
     font-size: 16px;
+}
+
+.active {
+    background: url(img/fl-bg-hover.gif) bottom repeat-x #67bdff;
 }
 

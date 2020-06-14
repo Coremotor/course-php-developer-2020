@@ -16,7 +16,16 @@
 <div class="clearfix">
 
     <?php
-        renderMenu($mainMenu, 'fz16', 'asc', "main-menu");
+        renderMenu($mainMenu, 'asc', "main-menu", "active");
     ?>
 
 </div>
+
+<table class="clearfix" width="100%" border="0" cellspacing="0" cellpadding="0">
+
+    <td class="left-collum-index">
+        <h1><?=showTitle($mainMenu);?></h1>
+
+        <p>Вести свои личные списки, например покупки в магазине, цели, задачи и многое другое. Делится списками с
+            друзьями и просматривать списки друзей.</p>
+    </td>

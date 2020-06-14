@@ -1,11 +1,9 @@
 <div class="footer-menu clearfix">
-    <ul class="main-menu bottom">
 
-        <?php
-            renderMenu($mainMenu, 'fz12', 'desc', "main-menu bottom");
-        ?>
+    <?php
+        renderMenu($mainMenu, 'desc', "main-menu bottom", "active");
+    ?>
 
-    </ul>
 </div>
 
 <div class="footer">&copy;&nbsp;<nobr>2020</nobr>
