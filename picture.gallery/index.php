@@ -15,7 +15,10 @@
         <form class="form" action="lib.php" method="post" enctype="multipart/form-data">
             <label class="label" for="input">Выберите файлы для загрузки</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
-            <input id="input" class="input" type="file" name="uploadUserPhoto[]" multiple accept="image/jpeg,image/png,image/jpg" />
+            <input id="input" class="input" type="file"
+                   name="uploadUserPhoto[]"
+                   multiple
+                   accept="image/jpeg,image/png,image/jpg" />
             <button name="uploadBtn" type="submit" value="Отправить">Отправить</button>
         </form>
 

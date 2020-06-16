@@ -1,3 +1,7 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/lib.php';
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
