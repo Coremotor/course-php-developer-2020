@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/lib.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/lib.php';
 ?>
 
 <!doctype html>
