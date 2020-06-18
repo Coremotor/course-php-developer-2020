@@ -10,4 +10,3 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="main-title">Форма загрузки файлов</h1>

@@ -1,41 +1,15 @@
 <?php
-//require_once $_SERVER['DOCUMENT_ROOT'] . '/lib.php';
-?>
-
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <title>Фото галерея</title>
-</head>
-<body>
-<div class="container">
-    <h1 class="galley-title">Галерея</h1>
-
-    <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
+    echo "<h1 class='galley-title'>Галерея</h1>";
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/lib.php';
     $dir = $_SERVER["DOCUMENT_ROOT"] . "/uploaded_files/";
     $files = scandir($dir);
     array_shift($files); // удаляем из массива '.'
     array_shift($files); // удаляем из массива '..'
 
-    ?>
+    include $_SERVER['DOCUMENT_ROOT'] . '/templates/form-gallery.php';
 
-    <div class="img-container">
+    echo "<a class=\"link\" href=\"/index.php\">Назад</a>";
 
-        <?php foreach ($files as $file): ?>
-
-            <img src="<?= "/uploaded_files/" . $file?>" alt="Картинка">
-
-        <?php endforeach; ?>
-
-    </div>
-
-</div>
-
-</body>
-</html>
+    include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';
 
