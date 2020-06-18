@@ -105,6 +105,7 @@ function checkOnError()
     }
     return $resultCheckOnError;
 }
+
 //Удаление картинки из галереи
 if (isset($_POST['deleteListCheckbox'])) {
     $deleteList = $_POST['deleteListCheckbox'];
