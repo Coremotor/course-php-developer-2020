@@ -1,37 +1,43 @@
 <?php if (isset($_POST["uploadBtn"])) : ?>
     <div class="container">
         <?php
-        if (!checkEmptyArr()): ?>
+        $resultCheckEmptyArr = checkEmptyArr();
+        if (!$resultCheckEmptyArr): ?>
             <span class="error">Должна быть выбрана хотя бы одна картинка</span>
         <?php endif; ?>
     </div>
 <?php endif; ?>
 
 
-<?php if ((isset($_POST["uploadBtn"]) && checkEmptyArr())) : ?>
+<?php if (isset($_POST["uploadBtn"]) && $resultCheckEmptyArr) : ?>
     <div class="container">
         <?php
-        if (!checkTypeFile()): ?>
+        $resultCheckTypeFile = checkTypeFile();
+        if (!$resultCheckTypeFile): ?>
             <span class="error">Загружаемые файлы должны быть изображениями</span>
         <?php endif; ?>
 
         <?php
-        if (!checkSizeFile()): ?>
+        $resultCheckSizeFile = checkSizeFile();
+        if (!$resultCheckSizeFile): ?>
             <span class="error">Загружаемые файлы должны быть меньше 5 мб</span>
         <?php endif; ?>
 
         <?php
-        if (checkCountFiles()): ?>
+        $resultCheckCountFiles = checkCountFiles();
+        if ($resultCheckCountFiles): ?>
             <span class="error">Загружаемых файлов должно быть не больше пяти</span>
         <?php endif; ?>
 
         <?php
-        if (checkOnError()): ?>
+        $resultCheckOnError = checkOnError();
+        if ($resultCheckOnError): ?>
             <span class="error">Произошла какая то ошибка</span>
         <?php endif; ?>
 
         <?php
-        if (!checkOnError() && !checkCountFiles() && checkSizeFile() && checkTypeFile()): ?>
+        if (!$resultCheckOnError && !$resultCheckCountFiles && $resultCheckSizeFile && $resultCheckTypeFile): ?>
+            <?php moveFile($uploadPath); ?>
             <span class="done">Файлы отправлены</span>
         <?php endif; ?>
     </div>

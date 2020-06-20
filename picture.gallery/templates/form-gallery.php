@@ -1,8 +1,8 @@
 <form method="post" class="img-container">
 
-    <?php foreach ($files as $file): ?>
+    <?php foreach ($arrFilter as $file): ?>
         <div class="img-item">
-            <img src="<?= "/uploaded_files/" . $file?>" alt="<?=$file?>">
+            <img class="img-gal" src="<?= "/uploaded_files/" . $file?>" alt="<?=$file?>">
             <span class="img-name"><?=$file?></span>
 
             <input id="<?=$file?>" class="img-cb" type="checkbox" name="deleteListCheckbox[]" value="<?=$file?>">

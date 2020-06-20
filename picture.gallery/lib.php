@@ -8,7 +8,7 @@ $uploadPath = $_SERVER["DOCUMENT_ROOT"] . "/uploaded_files/";
  */
 function moveFile($uploadPath)
 {
-    if ((isset($_POST["uploadBtn"]) && checkEmptyArr())) {
+    if (isset($_POST["uploadBtn"]) && checkEmptyArr()) {
 
         if (checkSizeFile() &&
             checkTypeFile() &&
@@ -110,7 +110,7 @@ function checkOnError()
 if (isset($_POST['deleteListCheckbox'])) {
     $deleteList = $_POST['deleteListCheckbox'];
     foreach ($deleteList as $file) {
-        $filePath = $_SERVER['DOCUMENT_ROOT'] . '/uploaded_files/' . $file;
+        $filePath = $uploadPath . $file;
         unlink($filePath);
     }
 }
