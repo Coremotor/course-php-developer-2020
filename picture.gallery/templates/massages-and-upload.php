@@ -12,7 +12,7 @@
 <?php if (isset($_POST["uploadBtn"]) && $resultCheckEmptyArr) : ?>
     <div class="container">
         <?php
-        $resultCheckTypeFile = checkTypeFile();
+        $resultCheckTypeFile = checkTypeFile($typeArr);
         if (!$resultCheckTypeFile): ?>
             <span class="error">Загружаемые файлы должны быть изображениями</span>
         <?php endif; ?>
@@ -37,7 +37,7 @@
 
         <?php
         if (!$resultCheckOnError && !$resultCheckCountFiles && $resultCheckSizeFile && $resultCheckTypeFile): ?>
-            <?php moveFile($uploadPath); ?>
+            <?php moveFile($uploadPath, $typeArr); ?>
             <span class="done">Файлы отправлены</span>
         <?php endif; ?>
     </div>

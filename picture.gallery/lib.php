@@ -1,17 +1,19 @@
 <?php
 
 $uploadPath = $_SERVER["DOCUMENT_ROOT"] . "/uploaded_files/";
+$typeArr = ['image/jpeg', 'image/png'];
 
 /**
  * Ф-ия после проведения проверок помещает файлы в папку /uploaded_files/
+ * @param $typeArr - массив типав файлов
  * @param $uploadPath - путь к папке с куда загружаются файлы
  */
-function moveFile($uploadPath)
+function moveFile($uploadPath, $typeArr)
 {
     if (isset($_POST["uploadBtn"]) && checkEmptyArr()) {
 
         if (checkSizeFile() &&
-            checkTypeFile() &&
+            checkTypeFile($typeArr) &&
             !checkCountFiles() &&
             !checkOnError()) {
 
@@ -24,15 +26,16 @@ function moveFile($uploadPath)
 
 /**
  * Ф-ия проверки типа загружаемых файлов (картинки или что то другое)
+ * @param $typeArr - массив типав файлов
  * @return true - файл является картинкой или весь массив файлов картинки
  * @return false - файл НЕ является картинкой или хотя бы один из файлов массива НЕ картинка
  *
  */
-function checkTypeFile()
+function checkTypeFile($typeArr)
 {
     $resultCheckTypeFile = null;
     foreach ($_FILES["uploadUserPhoto"]["tmp_name"] as $key => $tmp_name) {
-        if (mime_content_type($tmp_name) === 'image/jpeg' || mime_content_type($tmp_name) === 'image/png') {
+        if (in_array(mime_content_type($tmp_name), $typeArr)) {
             $resultCheckTypeFile = true;
         } else {
             $resultCheckTypeFile = false;
@@ -114,3 +117,29 @@ if (isset($_POST['deleteListCheckbox'])) {
         unlink($filePath);
     }
 }
+/**
+ * @param $fileSizeBytes - размер файла в байтах
+ * @return int|string
+ */
+function sizeView($fileSizeBytes)
+{
+    $sizeMask = 0;
+    if ($fileSizeBytes <= (1024 * 10)) {
+        $sizeMask = round($fileSizeBytes) . ' b';
+    } else if ($fileSizeBytes > (1024 * 10) && $fileSizeBytes <= (1024 * 1024)) {
+        $sizeMask = round($fileSizeBytes / 1024) . ' Kb';
+    } else if ($fileSizeBytes > (1024 * 1024)   ) {
+        $sizeMask = round($fileSizeBytes / (1024 * 1024)) . ' Mb';
+    }
+    return $sizeMask;
+}
+
+/**
+ * @param $date - результат выполнения ф-ии filectime()
+ * @return false|string
+ */
+function dateView($date)
+{
+    return date('d.m.Y H:i:s', $date);
+}
+
