@@ -43,5 +43,4 @@
     </div>
 <?php endif; ?>
 
-<!--isset($_POST["uploadBtn"])-->
 

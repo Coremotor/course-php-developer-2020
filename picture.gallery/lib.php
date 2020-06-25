@@ -1,5 +1,11 @@
 <?php
 
+function vd ($str, $var) {
+    echo '<pre>';
+    var_dump($str, $var);
+    echo '</pre>';
+}
+
 $uploadPath = $_SERVER["DOCUMENT_ROOT"] . "/uploaded_files/";
 $typeArr = ['image/jpeg', 'image/png'];
 
@@ -111,10 +117,9 @@ function checkOnError()
 
 //Удаление картинки из галереи
 if (isset($_POST['deleteListCheckbox'])) {
-        var_dump('del block', isset($_POST['deleteListCheckbox']));
-        var_dump('$_FILES', $_FILES);
+        vd('del block', isset($_POST['deleteListCheckbox']));
     $deleteList = $_POST['deleteListCheckbox'];
-        var_dump('list_checkbox', $deleteList);
+        vd('list_checkbox', $deleteList);
     foreach ($deleteList as $file) {
         $filePath = $uploadPath . $file;
         unlink($filePath);
