@@ -1,9 +1,7 @@
 </div>
 <?php
-
-
-
-include $_SERVER['DOCUMENT_ROOT'] . '/fetch.php';
+var_dump($_POST);
+var_dump($_FILES);
 ?>
 </body>
 </html>

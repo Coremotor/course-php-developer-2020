@@ -1,4 +1,4 @@
-<form method="post" class="img-container">
+<form id="form-gallery" method="post" class="img-container">
 
     <?php foreach ($arrFilter as $file): ?>
         <div class="img-item">

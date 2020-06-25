@@ -111,7 +111,10 @@ function checkOnError()
 
 //Удаление картинки из галереи
 if (isset($_POST['deleteListCheckbox'])) {
+        var_dump('del block', isset($_POST['deleteListCheckbox']));
+        var_dump('$_FILES', $_FILES);
     $deleteList = $_POST['deleteListCheckbox'];
+        var_dump('list_checkbox', $deleteList);
     foreach ($deleteList as $file) {
         $filePath = $uploadPath . $file;
         unlink($filePath);
