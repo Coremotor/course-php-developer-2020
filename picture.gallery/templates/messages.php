@@ -1,0 +1,1 @@
+<span id="messages"></span>

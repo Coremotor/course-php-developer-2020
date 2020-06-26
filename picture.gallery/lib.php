@@ -9,24 +9,43 @@ function vd ($str, $var) {
 $uploadPath = $_SERVER["DOCUMENT_ROOT"] . "/uploaded_files/";
 $typeArr = ['image/jpeg', 'image/png'];
 
+//проверка условий соответствия файлов и загрузка
+if (isset($_POST["uploadBtn"])) {
+    if (checkEmptyArr()) {
+        if (checkTypeFile($typeArr)) {
+            if (checkSizeFile()) {
+                if (!checkCountFiles()) {
+                    if (!checkOnError()) {
+                        moveFile($uploadPath);
+                        $messages = 'Файлы отправлены';
+                    } else {
+                        $messages = 'Произошла какая то ошибка';
+                    }
+                }
+                else {
+                    $messages = 'Загружаемых файлов должно быть не больше пяти';
+                }
+            }
+            else {
+                $messages = 'Загружаемые файлы должны быть меньше 5 мб';
+            }
+        } else {
+            $messages = 'Загружаемые файлы должны быть изображениями';
+        }
+    } else {
+        $messages = 'Должна быть выбрана хотя бы одна картинка';
+    }
+    echo $messages;
+}
+
 /**
  * Ф-ия после проведения проверок помещает файлы в папку /uploaded_files/
- * @param $typeArr - массив типав файлов
  * @param $uploadPath - путь к папке с куда загружаются файлы
  */
-function moveFile($uploadPath, $typeArr)
+function moveFile($uploadPath)
 {
-    if (isset($_POST["uploadBtn"]) && checkEmptyArr()) {
-
-        if (checkSizeFile() &&
-            checkTypeFile($typeArr) &&
-            !checkCountFiles() &&
-            !checkOnError()) {
-
-            foreach ($_FILES["uploadUserPhoto"]["error"] as $key => $error) {
-                move_uploaded_file($_FILES["uploadUserPhoto"]["tmp_name"][$key], $uploadPath . $_FILES["uploadUserPhoto"]["name"][$key]);
-            }
-        }
+    foreach ($_FILES["uploadUserPhoto"]["error"] as $key => $error) {
+        move_uploaded_file($_FILES["uploadUserPhoto"]["tmp_name"][$key], $uploadPath . $_FILES["uploadUserPhoto"]["name"][$key]);
     }
 }
 
@@ -150,4 +169,3 @@ function dateView($date)
 {
     return date('d.m.Y H:i:s', $date);
 }
-
