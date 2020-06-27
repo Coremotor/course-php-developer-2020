@@ -1,13 +1,14 @@
 <?php
 
-function vd ($str, $var) {
+function vd($str, $var)
+{
     echo '<pre>';
     var_dump($str, $var);
     echo '</pre>';
 }
 
 $uploadPath = $_SERVER["DOCUMENT_ROOT"] . "/uploaded_files/";
-$typeArr = ['image/jpeg', 'image/png'];
+$typeArr = ['image/jpeg', 'image/png', 'image/jpg'];
 
 //проверка условий соответствия файлов и загрузка
 if (isset($_POST["uploadBtn"])) {
@@ -21,12 +22,10 @@ if (isset($_POST["uploadBtn"])) {
                     } else {
                         $messages = 'Произошла какая то ошибка';
                     }
-                }
-                else {
+                } else {
                     $messages = 'Загружаемых файлов должно быть не больше пяти';
                 }
-            }
-            else {
+            } else {
                 $messages = 'Загружаемые файлы должны быть меньше 5 мб';
             }
         } else {
@@ -136,9 +135,7 @@ function checkOnError()
 
 //Удаление картинки из галереи
 if (isset($_POST['deleteListCheckbox'])) {
-        vd('del block', isset($_POST['deleteListCheckbox']));
     $deleteList = $_POST['deleteListCheckbox'];
-        vd('list_checkbox', $deleteList);
     foreach ($deleteList as $file) {
         $filePath = $uploadPath . $file;
         unlink($filePath);
@@ -155,7 +152,7 @@ function sizeView($fileSizeBytes)
         $sizeMask = round($fileSizeBytes) . ' b';
     } else if ($fileSizeBytes > (1024 * 10) && $fileSizeBytes <= (1024 * 1024)) {
         $sizeMask = round($fileSizeBytes / 1024) . ' Kb';
-    } else if ($fileSizeBytes > (1024 * 1024)   ) {
+    } else if ($fileSizeBytes > (1024 * 1024)) {
         $sizeMask = round($fileSizeBytes / (1024 * 1024)) . ' Mb';
     }
     return $sizeMask;

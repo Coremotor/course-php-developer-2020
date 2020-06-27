@@ -21,12 +21,12 @@ if (document.getElementById('formSend')) {
             .then(t => {
                 console.log('TEXT', t);
                 if (t === 'Файлы отправлены') {
-                    messagesBlock.classList.remove('error');
-                    messagesBlock.classList.add('done');
+                    messagesBlock.classList.remove('uk-alert-danger');
+                    messagesBlock.classList.add('uk-alert-success');
                     messagesBlock.textContent = t;
                 } else {
-                    messagesBlock.classList.remove('done');
-                    messagesBlock.classList.add('error');
+                    messagesBlock.classList.remove('uk-alert-success');
+                    messagesBlock.classList.add('uk-alert-danger');
                     messagesBlock.textContent = t;
                 }
             })
@@ -36,6 +36,7 @@ if (document.getElementById('formSend')) {
 
 
 if (document.getElementById('form-gallery')) {
+
     const formGalleryElem = document.getElementById('form-gallery');
 
     formGalleryElem.addEventListener('submit', (e) => {
@@ -51,9 +52,22 @@ if (document.getElementById('form-gallery')) {
         })
             .then(r => r.text())
             .then(t => console.log(t))
+            .then(() => getCheckedCheckBoxes())
             .catch(e => console.log(e));
     });
 }
+
+
+function getCheckedCheckBoxes() {
+    const selectedCheckBoxes = document.querySelectorAll('input.img-cb:checked');
+
+    selectedCheckBoxes.forEach((node) => {
+        let parentNode = node.parentNode;
+        parentNode.remove();
+    })
+}
+
+
 
 
 

@@ -7,10 +7,10 @@ error_reporting(E_ALL);
 require_once $_SERVER['DOCUMENT_ROOT'] . '/lib.php';
 
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
-echo "<h1 class=\"main-title\">Форма загрузки файлов</h1>";
+?><h1 class="main-title">Форма загрузки файлов</h1><?php
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/form.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/messages.php';
-echo "<a class=\"link\" href=\"/gallery.php\">Перейти в галерею</a>";
+?><a class="link uk-link-text" href="/gallery.php">Перейти в галерею</a><?php
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';
 
 
