@@ -238,6 +238,7 @@ a:hover {
 }
 
 .active {
+    color: white !important;
     background: url(img/fl-bg-hover.gif) bottom repeat-x #67bdff;
 }
 
