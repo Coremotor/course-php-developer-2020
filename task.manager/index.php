@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/lib.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/include/phpconfig.php");
 
 $isAuth = null;
 
@@ -18,21 +19,19 @@ if (isset($_POST["btnSend"])) {
 
     $index = array_search($login, $logins);
 
-    $isAuth = $index !== false && $password == $passwords[$index];
+    if ($index !== false && $password == $passwords[$index]) {
 
-    if (!isset($_SESSION["isAuth"])) {
-        session_start();
-        setcookie("login", $login, time() + 60 * 60 * 24 * 30, "/");
-        $_SESSION["isAuth"] = $isAuth;
-        var_dump($_SESSION["isAuth"]);
+        if (!isset($_SESSION["isAuth"])) {
+            session_start();
+            setcookie("login", $login, time() + 60 * 60 * 24 * 30, "/");
+            $_SESSION["isAuth"] = true;
+            var_dump($_SESSION["isAuth"]);
+        }
     }
 }
 
 if (isset($_GET["logout"]) && $_GET["logout"] == 'yes' && $_COOKIE['login']) {
-    var_dump($_GET);
-    unset($_SESSION['isAuth']);
-    setcookie("login", "", time() - 36000, "/");
-
+    logout();
 }
 
 ?>

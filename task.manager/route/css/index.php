@@ -1,4 +1,3 @@
-
 <?php
 
 ini_set('display_errors', 1);
@@ -7,89 +6,110 @@ error_reporting(E_ALL);
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/lib.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/include/phpconfig.php");
 
 $isAuth = null;
 
-if (isset($_POST["btnSend"])) {
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/passwords.php");
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/logins.php");
+//if (isset($_POST["btnSend"])) {
+//    require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/passwords.php");
+//    require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/logins.php");
+//
+//    $login = $_POST["login"];
+//    $password = $_POST["password"];
+//
+//    $index = array_search($login, $logins);
+//
+//    if ($index !== false && $password == $passwords[$index]) {
+//
+//        if (!isset($_SESSION["isAuth"])) {
+//            session_start();
+//            setcookie("login", $login, time() + 60 * 60 * 24 * 30, "/");
+//            $_SESSION["isAuth"] = true;
+//            var_dump($_SESSION["isAuth"]);
+//        }
+//    }
+//}
 
-    $login = $_POST["login"];
-    $password = $_POST["password"];
-
-    $index = array_search($login, $logins);
-
-    $isAuth = $index !== false && $password == $passwords[$index];
+if (isset($_GET["logout"]) && $_GET["logout"] == 'yes' && $_COOKIE['login']) {
+    logout();
 }
 
 ?>
 
 <?php
-include ($_SERVER["DOCUMENT_ROOT"] . "/template/header.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/template/header.php");
 ?>
 
 
+<td>
+<td class="right-collum-index ">
 
-    <td>
-    <td class="right-collum-index ">
+    <div class="project-folders-menu">
+        <ul class="project-folders-v">
+            <?php var_dump(isset($_SESSION['isAuth']))?>
 
-        <div class="project-folders-menu">
-            <ul class="project-folders-v">
+            <?php if (isset($_SESSION['isAuth']) && $_SESSION['isAuth']) : ?>
+                <li class="project-folders-v-active"><a href="/?logout=yes">Выйти</a></li>
+            <?php endif; ?>
+
+            <?php if (!isset($_SESSION['isAuth'])) : ?>
                 <li class="project-folders-v-active"><a href="/?login=yes">Авторизация</a></li>
-                <li><a href="#">Регистрация</a></li>
-                <li><a href="#">Забыли пароль?</a></li>
-            </ul>
-            <div class="clearfix"></div>
-        </div>
+            <?php endif; ?>
 
-        <?php if (isset($_GET["login"]) && $_GET["login"] == 'yes') : ?>
+            <li><a href="#">Регистрация</a></li>
+            <li><a href="#">Забыли пароль?</a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
 
-            <div class="index-auth">
-                <div>
-                    <?php if ($isAuth) {
-                        include($_SERVER["DOCUMENT_ROOT"] . "/include/success.php");
-                    } elseif ($isAuth === null) {
-                        include($_SERVER["DOCUMENT_ROOT"] . "/include/enter.php");
-                    } else {
-                        include($_SERVER["DOCUMENT_ROOT"] . "/include/error.php");
-                    }?>
-                </div>
+    <?php if (isset($_GET["login"]) && $_GET["login"] == 'yes') : ?>
 
-                <?php if (!$isAuth) : ?>
-
-                    <form action="/?login=yes" method="post">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td class="iat">
-                                    <label for="login_id">Ваш e-mail:</label>
-                                    <input id="login_id" size="30" name="login"
-                                           value="<?= $_POST["login"] ?? "" ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="iat">
-                                    <label for="password_id">Ваш пароль:</label>
-                                    <input id="password_id" size="30" name="password" type="password">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" name="btnSend" value="Войти"></td>
-                            </tr>
-                        </table>
-                    </form>
-
-                <?php endif;?>
+        <div class="index-auth">
+            <div>
+                <?php if ($isAuth) {
+                    include($_SERVER["DOCUMENT_ROOT"] . "/include/success.php");
+                } elseif ($isAuth === null) {
+                    include($_SERVER["DOCUMENT_ROOT"] . "/include/enter.php");
+                } else {
+                    include($_SERVER["DOCUMENT_ROOT"] . "/include/error.php");
+                } ?>
             </div>
 
-        <?php endif;?>
+            <?php if (!$isAuth) : ?>
 
-    </td>
-    </td>
+                <form action="/?login=yes" method="post">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td class="iat">
+                                <label for="login_id">Ваш e-mail:</label>
+                                <input id="login_id" size="30" name="login"
+                                       value="<?= $_POST["login"] ?? "" ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="iat">
+                                <label for="password_id">Ваш пароль:</label>
+                                <input id="password_id" size="30" name="password" type="password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="btnSend" value="Войти"></td>
+                        </tr>
+                    </table>
+                </form>
+
+            <?php endif; ?>
+        </div>
+
+    <?php endif; ?>
+
+</td>
+</td>
 
 </table>
 
 <?php
-include ($_SERVER["DOCUMENT_ROOT"] . "/template/footer.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/template/footer.php");
 ?>
 
 </body>

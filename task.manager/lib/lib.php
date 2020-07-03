@@ -1,7 +1,8 @@
 <?php
 
 //Ф-ия для определения текущего URL
-function isCurrentUrl($url){
+function isCurrentUrl($url)
+{
     return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) == $url;
 }
 
@@ -19,7 +20,7 @@ function renderMenu($arr, $sort, $listClassName, $activeClass)
 {
     $newArr = arraySort($arr, $sort);
 
-    include ($_SERVER["DOCUMENT_ROOT"] . "/template/menu.php");
+    include($_SERVER["DOCUMENT_ROOT"] . "/template/menu.php");
 }
 
 //Ф-ия для вывода заголовка
@@ -42,4 +43,21 @@ function arraySort($arr, $sort)
         return $sort == 'desc' ? $b['sort'] - $a['sort'] : $a['sort'] - $b['sort'];
     });
     return $arr;
+}
+
+//Ф-ия редиректа
+function redirect($destination)
+{
+    ob_start();
+    header('Location: ' . $destination);
+    ob_end_flush();
+    exit();
+}
+
+//Ф-ия для удаления куки и значений сессии
+function logout()
+{
+    unset($_SESSION['isAuth']);
+    setcookie("login", "", time() - 36000, "/");
+    redirect('/');
 }
