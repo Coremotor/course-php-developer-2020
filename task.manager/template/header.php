@@ -1,3 +1,20 @@
+<?php
+require_once($_SERVER["DOCUMENT_ROOT"] . "/include/phpconfig.php");
+session_start();
+require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/lib.php");
+
+if (!isCurrentUrl('/')) {
+    if (!isset($_SESSION['isAuth'])) {
+        redirect('/');
+    }
+}
+
+if (isset($_GET["logout"]) && $_GET["logout"] == 'yes' && $_COOKIE['login']) {
+    logout();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -21,11 +38,3 @@
 
 </div>
 
-<table class="clearfix" width="100%" border="0" cellspacing="0" cellpadding="0">
-
-    <td class="left-collum-index">
-        <h1><?=showTitle($mainMenu);?></h1>
-
-        <p>Вести свои личные списки, например покупки в магазине, цели, задачи и многое другое. Делится списками с
-            друзьями и просматривать списки друзей.</p>
-    </td>

@@ -48,9 +48,7 @@ function arraySort($arr, $sort)
 //Ф-ия редиректа
 function redirect($destination)
 {
-    ob_start();
     header('Location: ' . $destination);
-    ob_end_flush();
     exit();
 }
 
@@ -60,4 +58,23 @@ function logout()
     unset($_SESSION['isAuth']);
     setcookie("login", "", time() - 36000, "/");
     redirect('/');
+}
+
+//Ф-ия авторизации
+function authorization($logins, $passwords)
+{
+    $isAuth = false;
+    $login = $_POST["login"];
+    $password = $_POST["password"];
+
+    $index = array_search($login, $logins);
+
+    if ($index !== false && $password == $passwords[$index]) {
+        $isAuth = true;
+        if (!isset($_SESSION["isAuth"])) {
+            setcookie("login", $login, time() + 60 * 60 * 24 * 30, "/");
+            $_SESSION["isAuth"] = $isAuth;
+        }
+    }
+    return $isAuth;
 }

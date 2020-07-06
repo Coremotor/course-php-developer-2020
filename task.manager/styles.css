@@ -221,8 +221,7 @@ a:hover {
 }
 
 .display-none {
-    display: none;
-    color: red;
+    display: none !important;
 }
 
 .main-title {
