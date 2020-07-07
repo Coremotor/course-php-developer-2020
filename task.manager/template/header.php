@@ -1,8 +1,11 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/include/phpconfig.php");
 session_start();
+
 require_once($_SERVER["DOCUMENT_ROOT"] . "/DB/main_menu.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/lib/lib.php");
+
+updateCookie ();
 
 if (!isCurrentUrl('/')) {
     if (!isset($_SESSION['isAuth'])) {

@@ -78,3 +78,10 @@ function authorization($logins, $passwords)
     }
     return $isAuth;
 }
+//Ф-ия обновления куки если пользователь авторизован
+function updateCookie () {
+    if (isset($_SESSION["isAuth"]) && $_SESSION["isAuth"] === true && isset($_COOKIE["login"])) {
+        $login = $_COOKIE["login"];
+        setcookie("login", $login, time() + 60 * 60 * 24 * 30, "/");
+    }
+}
