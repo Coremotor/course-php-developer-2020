@@ -3,14 +3,16 @@
 $names = ['Кукла Маша', 'Кукла Даша', 'Медведь из кустов', 'Початок Боб', 'Веселые мопсы'];
 $summary = [];
 
-class ToyFactory {
+class ToyFactory
+{
     public function createToy($name)
     {
         return new Toy($name, rand(1, 1000));
     }
 }
 
-class Toy {
+class Toy
+{
     public $name;
     public $price;
 
@@ -21,7 +23,7 @@ class Toy {
     }
 }
 
-for ($i=0; $i <= rand(5, 20); $i++) {
+for ($i = 0; $i <= rand(5, 20); $i++) {
     $toy = (new ToyFactory)->createToy($names[rand(0, count($names) - 1)]);
     echo '<pre>';
     echo "Прекрассная игрушка: $toy->name стоимостью $toy->price тычяч долларов США";

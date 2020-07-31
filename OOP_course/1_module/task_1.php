@@ -1,13 +1,15 @@
 <?php
 
-function var_dump_pre($mixed = null) {
+function var_dump_pre($mixed = null)
+{
     echo '<pre>';
     var_dump($mixed);
     echo '</pre>';
     return null;
 }
 
-class Cat {
+class Cat
+{
     public $name;
 
     function __construct($animalName)
@@ -16,7 +18,8 @@ class Cat {
     }
 }
 
-class Dog {
+class Dog
+{
     public $name;
 
     function __construct($animalName)
@@ -25,7 +28,8 @@ class Dog {
     }
 }
 
-class Fish {
+class Fish
+{
     public $name;
 
     function __construct($animalName)
