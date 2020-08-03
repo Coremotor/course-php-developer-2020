@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7d6db58-f08b-46c6-bad2-c8802eba2823" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oop-module-2/farm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oop-module-2/farm_v2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-module-2/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHP_course/oop-module-1/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop-module-1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop-module-2/farm_v2.php" beforeDir="false" afterPath="$PROJECT_DIR$/oop-module-2/farm_v2.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +38,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fZxLqgJEo2z3mjLZoyHGl5q5Up" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -68,6 +74,7 @@
       <updated>1596439368349</updated>
       <workItem from="1596439373046" duration="4916000" />
       <workItem from="1596455167908" duration="5051000" />
+      <workItem from="1596477619720" duration="8680000" />
     </task>
     <servers />
   </component>
@@ -85,5 +92,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
