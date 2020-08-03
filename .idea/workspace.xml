@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7d6db58-f08b-46c6-bad2-c8802eba2823" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/course-php-developer-2020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oop-module-1/tack_4.php" beforeDir="false" afterPath="$PROJECT_DIR$/oop-module-1/task_4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oop-module-1/tack_5.php" beforeDir="false" afterPath="$PROJECT_DIR$/oop-module-1/task_5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-module-2/farm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-module-2/farm_v2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +45,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/oop-module-2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\okoukr\Desktop\SkillBox\GitHub\course-php-developer-2020\oop-module-2" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -63,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596439368349</updated>
       <workItem from="1596439373046" duration="4916000" />
+      <workItem from="1596455167908" duration="5051000" />
     </task>
     <servers />
   </component>
@@ -79,5 +84,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
