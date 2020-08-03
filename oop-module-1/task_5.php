@@ -1,46 +1,63 @@
 <?php
 
+require $_SERVER['DOCUMENT_ROOT'] . '/task_4.php';
+
+use task_4\User;
+
 class Order
 {
     public $basket;
 
+    public function __construct(Basket $basket)
+    {
+        $this->basket = $basket;
+    }
+
     public function getBasket()
     {
         //возврат корзины товара
+        return $this->basket->describe();
     }
 
     public function getPrice()
     {
         //возвращает общую стоимость товаров
+        return $this->basket->getPrice();
     }
-
-
 }
 
 class Basket
 {
     public $productsInBasket = [];
+    public $summaryPrice = 0;
 
     public function addProduct(Product $product, $quantity)
     {
         //добавляет товар в корзину
-        array_push($this->productsInBasket, [$product, $quantity]);
+        $this->productsInBasket[] = [
+            'name' => $product->getName(),
+            'price' => $product->getPrice(),
+            'quantity' => $quantity,
+        ];
+        return $this->productsInBasket;
     }
 
     public function getPrice()
     {
         //возвращает стоимость товаров в корзине
+        $this->summaryPrice = 0;
+        foreach ($this->productsInBasket as $key) {
+            $this->summaryPrice += $key['price'] * $key['quantity'];
+        }
+        return $this->summaryPrice;
     }
 
     public function describe()
     {
         //выводит или возвращает информацию о корзине в виде строки: "<Наименование товара> — <Цена одной позиции> — <Количество>"
-    }
-
-    public function vdArr() {
-        echo '<pre>';
-        var_dump($this->productsInBasket);
-        echo '</pre>';
+        foreach ($this->productsInBasket as $key) {
+            echo "{$key['name']} - {$key['price']} кр. - {$key['quantity']} шт.<br />";
+        }
     }
 }
 
@@ -78,4 +95,10 @@ $basket->addProduct($firstProduct, 10);
 $basket->addProduct($secondProduct, 200);
 $basket->addProduct($thirdProduct, 3);
 
-$basket->vdArr();
+$order = new Order($basket);
+
+$user = new User('Гуль Иван Иваныч', 'gull@fallout.rad', 'unknown', '249');
+
+$user->notify("Для вас создан заказ, на сумму: {$order->getPrice()} кр. <br /> Состав:");
+$order->getBasket();
+

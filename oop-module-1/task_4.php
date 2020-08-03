@@ -1,5 +1,7 @@
 <?php
 
+namespace task_4;
+
 class User
 {
 
@@ -62,7 +64,7 @@ class Notification
 
     public function send($fio, $age, $via, $destination, $message)
     {
-        echo "Уведомление клиенту: $fio возраст: $age лет канал связи $via: $destination: $message! <br />";
+        echo "Уведомление клиенту: $fio возраст: $age лет канал связи $via: $destination: $message <br />";
     }
 }
 
