@@ -1,6 +1,6 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/task_4.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/oop-module-1/task_4.php';
 
 use task_4\User;
 
@@ -16,7 +16,7 @@ class Order
     public function getBasket()
     {
         //возврат корзины товара
-        return $this->basket->describe();
+        $this->basket->describe();
     }
 
     public function getPrice()
@@ -35,8 +35,7 @@ class Basket
     {
         //добавляет товар в корзину
         $this->productsInBasket[] = [
-            'name' => $product->getName(),
-            'price' => $product->getPrice(),
+            'product' => $product,
             'quantity' => $quantity,
         ];
         return $this->productsInBasket;
@@ -47,7 +46,7 @@ class Basket
         //возвращает стоимость товаров в корзине
         $this->summaryPrice = 0;
         foreach ($this->productsInBasket as $key) {
-            $this->summaryPrice += $key['price'] * $key['quantity'];
+            $this->summaryPrice += $key['product']->productPrice * $key['quantity'];
         }
         return $this->summaryPrice;
     }
@@ -56,7 +55,7 @@ class Basket
     {
         //выводит или возвращает информацию о корзине в виде строки: "<Наименование товара> — <Цена одной позиции> — <Количество>"
         foreach ($this->productsInBasket as $key) {
-            echo "{$key['name']} - {$key['price']} кр. - {$key['quantity']} шт.<br />";
+            echo "{$key['product']->productName} - {$key['product']->productPrice} кр. - {$key['quantity']} шт.<br />";
         }
     }
 }

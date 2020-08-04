@@ -14,27 +14,27 @@ class User
         $this->phone = $phone;
     }
 
-    protected function notifyOnEmail($message, $receiver, $via, $to)
+    protected function notifyOnEmail($message, $receiver, $to)
     {
-        $notification = new Notification($receiver, $via, $to);
-        $notification->send($this->fio, $this->age, $via, $this->email, $message);
+        $notification = new Notification($receiver, 'почта', $to);
+        $notification->send($this->age, $this->email, $message);
     }
 
-    protected function notifyOnPhone($message, $receiver, $via, $to)
+    protected function notifyOnPhone($message, $receiver,$to)
     {
-        $notification = new Notification($receiver, $via, $to);
-        $notification->send($this->fio, $this->age, $via, $this->phone, $message);
+        $notification = new Notification($receiver, 'телефон', $to);
+        $notification->send($this->age, $this->phone, $message);
     }
 
     public function notify($message)
     {
         if ($this->censor()) {
             if ($this->email) {
-                $this->notifyOnEmail($message, $this->fio, 'почта', $this->email);
+                $this->notifyOnEmail($message, $this->fio, $this->email);
             }
 
             if ($this->phone) {
-                $this->notifyOnPhone($message, $this->fio, 'телефон', $this->phone);
+                $this->notifyOnPhone($message, $this->fio, $this->phone);
             }
         }
     }
@@ -62,9 +62,9 @@ class Notification
         $this->to = $to;
     }
 
-    public function send($fio, $age, $via, $destination, $message)
+    public function send($age, $destination, $message)
     {
-        echo "Уведомление клиенту: $fio возраст: $age лет канал связи $via: $destination: $message <br />";
+        echo "Уведомление клиенту: $this->receiver возраст: $age лет канал связи $this->via: $destination: $message <br />";
     }
 }
 

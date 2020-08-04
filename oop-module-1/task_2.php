@@ -1,13 +1,5 @@
 <?php
 
-function var_dump_pre($mixed = null)
-{
-    echo '<pre>';
-    var_dump($mixed);
-    echo '</pre>';
-    return null;
-}
-
 class HungryCat
 {
     public $name;
@@ -23,11 +15,11 @@ class HungryCat
 
     public function eat($food)
     {
-        var_dump_pre("Голодный кот $this->name, особые приметы: цвет - $this->color. Cъел $food.");
+        echo "Голодный кот $this->name, особые приметы: цвет - $this->color. Cъел $food.</br>";
         if ($this->food === $food) {
-            var_dump_pre("И замурчал 'мррррр' от своей любимой еды");
+            echo "И замурчал 'мррррр' от своей любимой еды</br>";
         } else {
-            var_dump_pre("Бееее...");
+            echo "Бееее...</br>";
         }
     }
 }
