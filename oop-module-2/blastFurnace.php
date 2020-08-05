@@ -33,7 +33,7 @@ class Smoke
     }
 }
 
-class Obj1
+class Obj
 {
     public $name;
 
@@ -41,7 +41,10 @@ class Obj1
     {
         $this->name = $name;
     }
+}
 
+class Obj1 extends Obj
+{
     public function burn()
     {
         return new Smoke();
@@ -53,15 +56,8 @@ class Obj1
     }
 }
 
-class Obj2
+class Obj2 extends Obj
 {
-    public $name;
-
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
     public function burn()
     {
         return new RedFlame();
@@ -73,15 +69,8 @@ class Obj2
     }
 }
 
-class Obj3
+class Obj3 extends Obj
 {
-    public $name;
-
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
     public function burn()
     {
         return new Smoke();
@@ -93,15 +82,8 @@ class Obj3
     }
 }
 
-class Obj4
+class Obj4 extends Obj
 {
-    public $name;
-
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
     public function burn()
     {
         return new BlueFlame();
@@ -113,15 +95,8 @@ class Obj4
     }
 }
 
-class Obj5
+class Obj5 extends Obj
 {
-    public $name;
-
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-
     public function burn()
     {
         return new RedFlame();

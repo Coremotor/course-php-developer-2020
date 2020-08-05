@@ -6,7 +6,7 @@ abstract class Animal
 {
     abstract public function say();
 
-    abstract public function go();
+//    abstract public function go();
 }
 
 abstract class FlyingAnimal extends Animal
@@ -31,10 +31,6 @@ class Cow extends HoofAnimal
         echo "Корова идет на ферму - ТОП-ТОП</br>";
     }
 
-    public function go()
-    {
-        $this->walk();
-    }
 }
 
 class Pig extends HoofAnimal
@@ -49,10 +45,6 @@ class Pig extends HoofAnimal
         echo "Хрюшка идет на ферму - ТОП-ТОП</br>";
     }
 
-    public function go()
-    {
-        $this->walk();
-    }
 }
 
 class Horse extends HoofAnimal
@@ -67,10 +59,6 @@ class Horse extends HoofAnimal
         echo "Конь идет на ферму - ТОП-ТОП</br>";
     }
 
-    public function go()
-    {
-        $this->walk();
-    }
 }
 
 class Chicken extends FlyingAnimal
@@ -85,7 +73,7 @@ class Chicken extends FlyingAnimal
         echo "Курица пытается лететь на ферму - Вжих-вжих-топ-топ</br>";
     }
 
-    public function go()
+    public function walk()
     {
         $this->tryToFly();
     }
@@ -103,7 +91,7 @@ class Goose extends FlyingAnimal
         echo "Важный гусь пытается лететь на ферму - Вжих-вжих-топ-топ</br>";
     }
 
-    public function go()
+    public function walk()
     {
         $this->tryToFly();
     }
@@ -121,7 +109,7 @@ class Turkey extends FlyingAnimal
         echo "Индюк пытается лететь на ферму - Вжих-вжих-топ-топ</br>";
     }
 
-    public function go()
+    public function walk()
     {
         $this->tryToFly();
     }
@@ -131,13 +119,21 @@ class Farm
 {
     public $animals = [];
 
-    public function showAnimalsCount()
+    public function addAnimal(Animal $animal)
     {
+
     }
 }
 
 class BirdFarm extends Farm
 {
+    public function addAnimal(Animal $animal)
+    {
+        $animal->walk();
+        $this->showAnimalsCount();
+    }
+
+
     public function showAnimalsCount()
     {
         $q = count($this->animals);
@@ -147,16 +143,18 @@ class BirdFarm extends Farm
 
 class HoofFarm extends Farm
 {
-
+    public function addAnimal(Animal $animal)
+    {
+        $animal->walk();
+    }
 }
 
 class Farmer
 {
     public function addAnimal(Farm $farm, Animal $animal)
     {
-        $animal->go();
         $farm->animals[] = $animal;
-        $farm->showAnimalsCount();
+        $farm->addAnimal($animal);
     }
 
     public function rollCall(Farm $farm, $type)
