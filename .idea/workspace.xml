@@ -20,9 +20,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7d6db58-f08b-46c6-bad2-c8802eba2823" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/oop-module-3/basketWithBalls.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-module-3/catFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oop-module-3/inTheAnimalWorld.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oop-module-2/blastFurnace.php" beforeDir="false" afterPath="$PROJECT_DIR$/oop-module-2/blastFurnace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oop-module-2/farm_v2.php" beforeDir="false" afterPath="$PROJECT_DIR$/oop-module-2/farm_v2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop-module-1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop-module-1/.idea/1_module.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop-module-1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop-module-1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-1/.idea/php-module-1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-1/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-2/.idea/php-module-2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-2/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-module-2/php-module-2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.gallery/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.gallery/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.gallery/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.gallery/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.gallery/.idea/picture.gallery.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.gallery/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/task.manager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.manager/.idea/watcherTasks.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +104,7 @@
       <workItem from="1596477619720" duration="8680000" />
       <workItem from="1596523898039" duration="17653000" />
       <workItem from="1596608927347" duration="4315000" />
+      <workItem from="1596790193754" duration="5510000" />
     </task>
     <servers />
   </component>
@@ -97,9 +127,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="801" y="454" key="NewPhpFileDialog" timestamp="1596541733220">
+    <state x="801" y="454" key="NewPhpFileDialog" timestamp="1596802850268">
       <screen x="0" y="0" width="1920" height="1052" />
     </state>
-    <state x="801" y="454" key="NewPhpFileDialog/0.0.1920.1052@0.0.1920.1052" timestamp="1596541733220" />
+    <state x="801" y="454" key="NewPhpFileDialog/0.0.1920.1052@0.0.1920.1052" timestamp="1596802850268" />
   </component>
 </project>
